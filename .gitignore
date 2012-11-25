@@ -1,0 +1,10 @@
+*.suo
+*.user*
+*.resharper
+_ReSharper.*
+bin
+obj
+Debug
+Release
+.dropbox
+desktop.ini
