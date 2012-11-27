@@ -1,14 +1,15 @@
 ﻿namespace Radiance
 
 open System
+open System.Runtime.InteropServices
 open System.Windows
 open System.Windows.Interop
 
 module Interop =
     [<System.Runtime.InteropServices.DllImport(@"dxva2.dll", EntryPoint="GetMonitorBrightness")>]
-    extern bool GetMonitorBrightness(IntPtr hMonitor, IntPtr minimumBrightness, IntPtr currentBrightness, IntPtr maximumBrightness);
+    extern [<return: MarshalAs(UnmanagedType.Bool)>] bool GetMonitorBrightness([<In>] nativeint hMonitor, [<Out>] uint32& minimumBrightness, [<Out>] uint32& currentBrightness, [<Out>] uint32& maximumBrightness);
     
     [<System.Runtime.InteropServices.DllImport(@"user32.dll", EntryPoint="MonitorFromWindow")>]
-    extern IntPtr MonitorFromWindow (IntPtr handle, uint32 dwFlags);
+    extern nativeint MonitorFromWindow ([<In>] nativeint handle, [<In>] uint32 dwFlags);
 
     let Hwnd(wpfWindow:Window) = WindowInteropHelper(wpfWindow).Handle

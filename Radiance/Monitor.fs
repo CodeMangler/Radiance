@@ -6,10 +6,9 @@ open System.Windows
 open Radiance.Interop
 
 type Monitor(window:Window) =
-    let mutable _minimumBrightness = 0
-    let mutable _currentBrightness = 0
-    let mutable _maximumBrightness = 0
-
+    let mutable _minimumBrightness = 0ul
+    let mutable _currentBrightness = 0ul
+    let mutable _maximumBrightness = 0ul
 
     member this.MinimumBrightness
         with get() = _minimumBrightness
@@ -25,13 +24,13 @@ type Monitor(window:Window) =
 
     member this.Initialize =
         let hMonitor = MonitorFromWindow(Hwnd(window), 0ul)
-        let min = new IntPtr()
-        let current = new IntPtr()
-        let max = new IntPtr()
-        let success = GetMonitorBrightness(hMonitor, min, current, max)
+        let mutable min = Unchecked.defaultof<uint32>
+        let mutable current = Unchecked.defaultof<uint32>
+        let mutable max = Unchecked.defaultof<uint32>
+        let success = GetMonitorBrightness(hMonitor, &min, &current, &max)
         match success with
             | true -> 
-                this.MinimumBrightness <- min.ToInt32()
-                this.CurrentBrightness <- current.ToInt32()
-                this.MaximumBrightness <- max.ToInt32()
+                this.MinimumBrightness <- min
+                this.CurrentBrightness <- current
+                this.MaximumBrightness <- max
             | _ -> ()
