@@ -23,6 +23,7 @@
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
     <DocumentationFile>bin\Debug\Radiance_VS2010.XML</DocumentationFile>
+    <EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>pdbonly</DebugType>
@@ -39,6 +40,7 @@
   <ItemGroup>
     <Compile Include="Interop.fs" />
     <Compile Include="WPF.fs" />
+    <Compile Include="WMI.fs" />
     <Compile Include="Monitor.fs" />
     <Compile Include="Radiance.fs" />
     <Content Include="Radiance.xaml">
@@ -53,6 +55,7 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
