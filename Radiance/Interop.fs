@@ -13,3 +13,9 @@ module Interop =
     extern nativeint MonitorFromWindow ([<In>] nativeint handle, [<In>] uint32 dwFlags);
 
     let Hwnd(wpfWindow:Window) = WindowInteropHelper(wpfWindow).Handle
+
+    [<System.Runtime.InteropServices.DllImport("user32.dll", EntryPoint="RegisterHotKey")>]
+    extern int RegisterHotKey([<In>] nativeint hWnd, int id, int fsModifiers, int vk);
+
+    [<System.Runtime.InteropServices.DllImport("user32.dll", EntryPoint="UnregisterHotKey")>]
+    extern int UnregisterHotKey([<In>] nativeint hWnd, int id);

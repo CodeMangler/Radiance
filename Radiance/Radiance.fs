@@ -20,8 +20,14 @@ type Radiance() as this =
         do slider.Minimum <- float(monitor.MinimumBrightness)
         do slider.Maximum <- float(monitor.MaximumBrightness)
         do slider.Value <- float(monitor.CurrentBrightness)
+        let keys = window.FindName("keys") :?> Button
+        keys.Click.Add(fun _ -> this.ConfigureKeys())
 
     member this.SyncBrightness() = 
         let slider = window.FindName("brightness") :?> Slider
         let display = new WMIMonitor()
         do display.SetBrightness(slider.Value)
+    
+    member this.ConfigureKeys() =
+        let keysDialog = Radiance.Keys()
+        do keysDialog.Window.ShowDialog() |> ignore

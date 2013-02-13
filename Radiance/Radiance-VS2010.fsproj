@@ -42,10 +42,20 @@
     <Compile Include="WPF.fs" />
     <Compile Include="WMI.fs" />
     <Compile Include="Monitor.fs" />
+    <Compile Include="Keys.fs" />
+    <Content Include="Keys.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Compile Include="Radiance.fs" />
     <Content Include="Radiance.xaml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="Radiance.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Keys.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <Compile Include="Main.fs" />
   </ItemGroup>
   <ItemGroup>
@@ -55,10 +65,13 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
