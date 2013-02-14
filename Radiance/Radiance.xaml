@@ -1,7 +1,7 @@
 ﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Radiance" Height="25" Width="300" Icon="Radiance.ico" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" Topmost="True">
+        Title="Radiance" Height="20" Width="300" Icon="Radiance.ico" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" Topmost="True">
     <Grid>
 		<Grid.ColumnDefinitions>
             <ColumnDefinition/>
