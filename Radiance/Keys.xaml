@@ -6,15 +6,21 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"></ColumnDefinition>
             <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         
         <Label Grid.Row="0"  Grid.Column="0">Brighter</Label>
         <Label Grid.Row="1"  Grid.Column="0">Darker</Label>
-        <TextBox Name="brighter" Grid.Row="0"  Grid.Column="1" />
-        <TextBox Name="darker" Grid.Row="1"  Grid.Column="1" />
+        <TextBox Name="brighter" Grid.Row="0"  Grid.Column="1" Grid.ColumnSpan="4" />
+        <TextBox Name="darker" Grid.Row="1"  Grid.Column="1" Grid.ColumnSpan="4" />
+        <Button Name="ok" Grid.Row="2" Grid.Column="3">Ok</Button>
+        <Button Name="cancel" Grid.Row="2" Grid.Column="4">Cancel</Button>
     </Grid>
 </Window>
